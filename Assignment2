@@ -1,0 +1,12 @@
+#!/bin/bash                                                                                                                       
+echo "Enter the list of hostnames"
+read hosts
+echo "You entered: $hosts"
+echo "Enter the command"
+read cmd
+for i in $(echo $hosts | sed "s/,/ /g")                          
+do                                                               	
+	echo "Going to run $cmd on $i"                                   
+	ssh $i $cmd                                                                                                             
+        echo                                                                                                                                           
+done 
